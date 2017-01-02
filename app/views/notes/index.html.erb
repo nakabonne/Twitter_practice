@@ -1,4 +1,4 @@
 <h1>ツイート一覧</h1>
 <% @notes.each do |note|%>
-<li><%=note.content%></li>
+<li><%=link_to note.content,note_path(note.id)%></li>
 <%end%>
