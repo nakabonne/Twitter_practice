@@ -1,5 +1,6 @@
 class NotesController < ApplicationController
   def new
+    @note = Note.new
   end
 
   def create
@@ -25,7 +26,14 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
     @note.content = params[:content]
     @note.save
-
+    #showアクションへ
     redirect_to note_path(@note.id)
+  end
+
+  def destroy
+    @note = Note.find(params[:id])
+    @note.destroy
+    #indexアクションへ
+    redirect_to notes_path
   end
 end

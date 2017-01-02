@@ -1,3 +1,4 @@
 <h1>ツイート詳細</h1>
 <p><%= @note.content%></p>
 <p><%= link_to "編集", edit_path(@note.id)%></p>
+<p><%= link_to "削除", destroy_note_path(@note.id),method: 'delete'%></p>

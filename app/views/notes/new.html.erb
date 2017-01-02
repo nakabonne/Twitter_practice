@@ -1,5 +1,9 @@
-<%= form_tag notes_path do%>
-<p>いまどうしてる?</p>
-<textarea name = "content"></textarea>
-<input type="submit" value="ツイート" class = "btn">
+<%= form_for(@note) do |f|%>
+<p>ユーザーID（仮）</p>
+<%= f.collection_select :user_id, User.all, :id, :id%>
+いまどうしてる?
+<!--<textarea name = "content"></textarea>-->
+<%= f.text_area :content%>
+<!--<input type="submit" value="ツイート">-->
+<p><%= f.submit "ツイート"%></p>
 <% end %>
