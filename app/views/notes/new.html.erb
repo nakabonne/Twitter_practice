@@ -1,7 +1,5 @@
-<%= form_tag do %>
-タイトル
-<input type="text">
-ツイート
-<textarea></textarea>
-<input type="submit" value="ツイート">
+<%= form_tag notes_path do%>
+<p>いまどうしてる?</p>
+<textarea name = "content"></textarea>
+<input type="submit" value="ツイート" class = "btn">
 <% end %>
