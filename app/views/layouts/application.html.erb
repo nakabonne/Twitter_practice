@@ -9,9 +9,21 @@
   </head>
 
   <body>
-    <header>
-      <%= link_to "ツイートする",new_path%><br><%= link_to "ツイート一覧",notes_path%>
+    <header class = "navbar navbar-fixed-top navbar-inverse">
+      <dev class = "container">
+        ツイッター
+      <nav>
+        <ul class = "nav navbar-nav navbar-right">
+          <li><%= link_to "ツイートする",new_path%></li>
+          <li><%= link_to "ツイート一覧",notes_path%></li>
+          <li><%= link_to "新規登録",new_user_path%></li>
+        </ul>
+      </nav>
+
+      </div>
     </header>
+    <div class = "center jumbotron">
     <%= yield %>
+    </div>
   </body>
 </html>

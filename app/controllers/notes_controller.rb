@@ -4,10 +4,13 @@ class NotesController < ApplicationController
   end
 
   def create
-    @note = Note.new
-    @note.content = params[:content]
-    @note.save
-    redirect_to note_path(@note.id)
+    @note = Note.new(params.permit(:content))
+    #@note.content = params[:content]
+    if @note.save
+    redirect_to @note, notice: "ツイート完了！！"
+    else
+      render :new
+    end
   end
 
   def show
@@ -36,4 +39,6 @@ class NotesController < ApplicationController
     #indexアクションへ
     redirect_to notes_path
   end
+
+
 end

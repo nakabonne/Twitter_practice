@@ -1,3 +1,4 @@
+<div class = "main">
 <%= form_for(@note) do |f|%>
 <p>ユーザーID（仮）</p>
 <%= f.collection_select :user_id, User.all, :id, :id%>
@@ -7,3 +8,4 @@
 <!--<input type="submit" value="ツイート">-->
 <p><%= f.submit "ツイート"%></p>
 <% end %>
+</div>
